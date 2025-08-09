@@ -1,0 +1,12 @@
+name: Manual Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  version-update:
+    uses: MCEngine-Action/gradle/.github/workflows/publish-gradle-with-testing.yml@master
+    with:
+      repo-name: ${{ github.repository }}
+    secrets:
+      USER_GITHUB_TOKEN: ${{ secrets.USER_GITHUB_TOKEN }}
